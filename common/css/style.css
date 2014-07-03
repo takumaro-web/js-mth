@@ -392,49 +392,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  color: #21228b;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-#contentFoot a {
-  font-weight: normal;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-sup {
-  line-height: 1;
-  vertical-align: baseline;
-}
-
-em {
-  font-style: normal;
-  font-weight: bold;
-  color: #df539f;
-}
-
 p {
-  margin: 0 0 15px;
-}
-
-figure {
-  margin: 0 0 10px;
-}
-
-figcaption {
-  text-align: center;
-  margin: 5px 0 10px;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  vertical-align: bottom;
+  margin: 0 0 20px;
 }
 
 select,
@@ -451,35 +410,8 @@ main {
   margin: 0 auto;
 }
 
-.list-tab {
-  margin-bottom: 10px;
-}
-
-.list-tab li {
-  display: inline-block;
-  margin-bottom: 0;
-}
-.list-tab li a {
-  padding: 10px 15px;
-  background: #000;
-  color: #fff;
-  border-radius: 10px 10px 0 0;
-}
-.list-tab li a:hover {
-  background: #C60019;
-}
-
-.list-tab li.current a {
-  background: #C60019;
-}
-
 h1 {
   margin-bottom: 30px;
-}
-
-.warp-tab div {
-  padding: 20px;
-  border: 1px dotted #ddd;
 }
 
 span.type-01 {

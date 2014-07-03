@@ -1,1 +1,1 @@
-coffee --compile --watch tab.coffee
+coffee --compile --watch mth.coffee
