@@ -1,5 +1,8 @@
 js-mth
 ======
+
+<img src="https://raw.githubusercontent.com/takumaro-web/js-mth/d3e1ba2cce30f78e35fb7d6c45b4487010cd18db/__sample-image/image.png" alt="">
+
 ###テキストをマキシマム ザ ホルモン風にできる.js  
 →Maximum The Hormone : mth.js
 
@@ -88,5 +91,5 @@ span.type-04 {
 アニメーション機能でも追加しよーかなぁと考えてます.
 
 ###ライセンス
-mit
+Mit
 
