@@ -7,18 +7,18 @@ js-mth
 →Maximum The Hormone : mth.js
 
 ###仕様
-・.mth-textを指定すると一文字ずつspanでくくってくれます.  
-・jquery依存です.
+・.mth-textを指定すると一文字ずつspanでくくってくれます。 
+・jquery依存です。
 
 ###使い方
 
 ####デフォルト
 1:ファイルを落とす.  
 2:mth.jsを読み込ませる.   
-3:適応させたい要素に.mth-textを指定する.
+3:適応させたい要素に.mth-textを指定する。
   ＜例＞``` <p class="mth-text">ほげほげ</p> ```  
-4:以下のstyleを自分のcssに追加する.  
-  ※ 他のスタイルとバッティングしないように気を付けてください.   
+4:以下のstyleを自分のcssに追加する。  
+  ※ 他のスタイルとバッティングしないように気を付けてください.。  
 
 ```css
 span.type-01 {
@@ -81,15 +81,55 @@ span.type-04 {
   box-shadow: 4px 4px #C60019;
   margin-right: 5px;
 }
+
+.roll {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes outer {
+  to {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+@keyframes outer {
+  to {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+.roll.type-01 {
+  -webkit-animation: outer 3s 0s infinite;
+  animation: outer 3s 0s infinite;
+}
+
+.roll.type-02 {
+  -webkit-animation: outer 3s 4s infinite;
+  animation: outer 3s 4s infinite;
+}
+
+.roll.type-03 {
+  -webkit-animation: outer 3s 2s infinite;
+  animation: outer 3s 2s infinite;
+}
+
+.roll.type-04 {
+  -webkit-animation: outer 3s 6s infinite;
+  animation: outer 3s 6s infinite;
+}
 ```
 
-####カスタム
-・class名の変更  
-・styleの変更 など
+###オプション
+【optionsを指定する場合】
+```coffee
+	textMTHOptions =
+		targetClass: '.mth-text' 
+		showAnime: true
+		animationType: 'roll'
+	textMTH = new textMTH(textMTHOptions)
+```
+※ jsを直接弄る場合は、上記をコンパイルさせてください。
 
-###今後
-アニメーション機能でも追加しよーかなぁと考えてます.
-
-###ライセンス
+###ライセンス。
 Mit
 
