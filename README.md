@@ -120,7 +120,7 @@ span.type-04 {
 ```
 
 ###オプション
-【optionsを指定する場合】
+【optionsを指定する場合 mth.coffee】
 ```coffee
 	textMTHOptions =
 		targetClass: '.mth-text' 
@@ -128,7 +128,7 @@ span.type-04 {
 		animationType: 'roll'
 	textMTH = new textMTH(textMTHOptions)
 ```
-※ jsを直接弄る場合は、上記をコンパイルさせてください。
+※ jsを直接弄る場合は、上記をコンパイルしてご利用ください。
 
 ###ライセンス。
 Mit
