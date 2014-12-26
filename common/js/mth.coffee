@@ -24,12 +24,16 @@ $ ->
 	class textMTH
 		defaults:
 			targetClass: '.mth-text'
+			showAnime: true
+			animationType: 'roll'
 
 		constructor:  (options) ->
 			@options = $.extend {}, @defaults, options
 			@className = $(@options.targetClass)
+			@showAnime = @options.showAnime
+			@animationType = @options.animationType
 			@_decorateFunc()
-			@_setAddClass()
+			@_setAddClass(@showAnime,@animationType)
 
 		###要素に囲まれたテキストを1文字ずつspanで囲む###
 		_decorateFunc:() ->
@@ -46,17 +50,38 @@ $ ->
 			    return
 
 		###spanにclass付与（装飾）###
-		_setAddClass:() ->
+		_setAddClass:(flag,animationClass) ->
 			num = 0
 			roopNum = 4
 			$(@className).each ->
 				  $("span", this).each (i) ->
-    				num = num + 1
-   					$(this).addClass "type-0" + num
+    				num = num + 1   					
+   					if flag is true
+   						$(this).addClass "type-0" + num
+   						$(this).addClass animationClass
+   					else
+   						$(this).addClass "type-0" + num
+   						
    					if roopNum is num
     					num = 0
    					return
    			return
 
-
 	textMTH = new textMTH()
+
+###
+使用例
+【optionsを指定しない場合】
+	textMTH = new textMTH()
+	
+	・ターゲットクラス：　.mth-text
+	・アニメーション：　有
+	・アニメーションクラス：　.roll
+
+【optionsを指定する場合】
+	textMTHOptions =
+		targetClass: '.mth-text'
+		showAnime: true
+		animationType: 'roll'
+	textMTH = new textMTH(textMTHOptions)
+###

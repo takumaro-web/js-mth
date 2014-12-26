@@ -11,11 +11,6 @@ h1 {
   margin-bottom: 30px;
 }
 
-.warp-tab div {
-  padding: 20px;
-  border:1px dotted #ddd;
-}
-
 span.type-01 {
   color: #ffffff;
   font-size: 34px;
@@ -63,4 +58,42 @@ span.type-04 {
   padding: 2px 3px;
   box-shadow: 4px 4px #C60019;
   margin-right: 5px;
+}
+
+.roll{
+-webkit-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes outer {
+  to {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes outer {
+  to {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.roll.type-01 {
+  -webkit-animation: outer 3s 0s infinite;
+  animation: outer 3s 0s infinite;
+}
+
+.roll.type-02 {
+  -webkit-animation: outer 3s 4s infinite;
+  animation: outer 3s 4s infinite;
+}
+
+.roll.type-03 {
+  -webkit-animation: outer 3s 2s infinite;
+  animation: outer 3s 2s infinite;
+}
+
+.roll.type-04 {
+  -webkit-animation: outer 3s 6s infinite;
+  animation: outer 3s 6s infinite;
 }

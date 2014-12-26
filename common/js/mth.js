@@ -1,3 +1,4 @@
+
 /*
 * Copyright (c) 2013 https://github.com/takumaro-web/js-mth / muraki-takuma
 *
@@ -18,21 +19,25 @@
 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 * DEALINGS IN THE SOFTWARE.
-*/
+ */
 
 (function() {
   $(function() {
     var textMTH;
     textMTH = (function() {
       textMTH.prototype.defaults = {
-        targetClass: '.mth-text'
+        targetClass: '.mth-text',
+        showAnime: true,
+        animationType: 'roll'
       };
 
       function textMTH(options) {
         this.options = $.extend({}, this.defaults, options);
         this.className = $(this.options.targetClass);
+        this.showAnime = this.options.showAnime;
+        this.animationType = this.options.animationType;
         this._decorateFunc();
-        this._setAddClass();
+        this._setAddClass(this.showAnime, this.animationType);
       }
 
 
@@ -57,14 +62,19 @@
 
       /*spanにclass付与（装飾） */
 
-      textMTH.prototype._setAddClass = function() {
+      textMTH.prototype._setAddClass = function(flag, animationClass) {
         var num, roopNum;
         num = 0;
         roopNum = 4;
         return $(this.className).each(function() {
           $("span", this).each(function(i) {
             num = num + 1;
-            $(this).addClass("type-0" + num);
+            if (flag === true) {
+              $(this).addClass("type-0" + num);
+              $(this).addClass(animationClass);
+            } else {
+              $(this).addClass("type-0" + num);
+            }
             if (roopNum === num) {
               num = 0;
             }
@@ -77,5 +87,23 @@
     })();
     return textMTH = new textMTH();
   });
+
+
+  /*
+  使用例
+  【optionsを指定しない場合】
+  	textMTH = new textMTH()
+  	
+  	・ターゲットクラス：　.mth-text
+  	・アニメーション：　有
+  	・アニメーションクラス：　.roll
+  
+  【optionsを指定する場合】
+  	textMTHOptions =
+  		targetClass: '.mth-text'
+  		showAnime: true
+  		animationType: 'roll'
+  	textMTH = new textMTH(textMTHOptions)
+   */
 
 }).call(this);
