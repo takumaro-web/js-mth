@@ -6,6 +6,9 @@ js-mth
 ###テキストをマキシマム ザ ホルモン風にできる.js  
 →Maximum The Hormone : mth.js
 
+###DEMO  
+http://takumaro-web.github.io/js-mth/
+
 ###仕様
 ・.mth-textを指定すると一文字ずつspanでくくってくれます。 
 ・jquery依存です。
